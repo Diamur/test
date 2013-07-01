@@ -15,7 +15,7 @@ while (st.hasMoreTokens()){     // Получаем слово и заносим
 				v.setSize(4);                                               // Уменьшаем число элементов
 				v.add("sobrat'.");                                         // Добавляем в конец укороченного вектора 
 				v.set(3, "snova");
-				                                        v// Ставим в позицию 3
+				                                        // Ставим в позицию 3
 				for (int i = 0; i < v.size(); i++)                           // Перебираем весь вектор
 				System.out.print(v.get(i) + "."); 
 				System.out.println();

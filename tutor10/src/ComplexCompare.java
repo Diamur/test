@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Александра
@@ -140,7 +142,7 @@ class ComplexTest{
 
     public static void main(String[] args){
 
-        Complex zl = new Complex(),
+        Complex z1 = new Complex(),
 
                 z2 = new Complex(1.5),
 
@@ -148,9 +150,15 @@ class ComplexTest{
 
                 z4 = new Complex(z3);
 
+        ComplexCompare cmp = new ComplexCompare();
+        if ( cmp.compare(z2,z4)>0 )  System.out.print("z2 > z4 ");
+        if ( cmp.compare(z2,z4)<0 )  System.out.print("z2 < z4 ");
+        if ( cmp.compare(z2,z4)==0 )  System.out.print("z2 = z4 ");
+
+
         System.out.println();       // Оставляем пустую строку
 
-        System.out.print("zl = "); zl.pr();
+        System.out.print("zl = "); z1.pr();
 
         System.out.print("z2 = "); z2.pr();
 
@@ -172,7 +180,7 @@ class ComplexTest{
 
         System.out.print("z2 + z2 = "); z2.pr();
 
-        z3 = z2.slash(zl);
+        z3 = z2.slash(z1);
 
         System.out.print("z2 / zl = "); z3.pr();
 
@@ -180,7 +188,7 @@ class ComplexTest{
 
 }
 
-abstract class ComplexCompare implements Comparable{
+class ComplexCompare implements Comparator {
 
     public int compare(Object obj1, Object obj2){
 
